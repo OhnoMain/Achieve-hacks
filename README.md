@@ -9,7 +9,7 @@ Then click on Console at the top <br />
 Then type allow pasting 📜<br />
 And then paste in the code and voila 🤌<br />
 <br />
-**Google Chrome**<br />
+<ins>**Google Chrome**</ins><br />
 To set it up on Google Chrome you first have to open achieve and load it into the asses (question page)<br />
 Then press <br />
 CTRL+SHIFT+I<br />
