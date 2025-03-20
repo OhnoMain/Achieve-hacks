@@ -22,3 +22,8 @@ Have fun <br />
 b(￣▽￣)d<br />
 <br />
 ![image](https://github.com/user-attachments/assets/8bd94e8e-bd67-47ff-ac4a-b83fabb1c3fd)<br />
+<br />
+<br />
+<ins>**Please dont be a skid 🚫🚫 **<br />
+**You are allowed to use this but dont claim it as your own** <br />
+</ins>
