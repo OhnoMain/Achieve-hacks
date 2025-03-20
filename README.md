@@ -26,8 +26,9 @@ b(￣▽￣)d<br />
 Currently there is only 1 Error which is when the page moves onto the next question the gui dissappers 
 (due to the realoading of the page) I am currently working on that fix, I am thinking of making it into 
 an extension
-Any tips would be appreciated 
+Any tips would be appreciated <br />
 <br />
 <ins>**Please dont be a skid 🚫🚫 **<br />
 **You are allowed to use this but dont claim it as your own** <br />
 </ins>
+
