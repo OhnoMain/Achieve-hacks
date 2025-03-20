@@ -1,7 +1,7 @@
 # Achieve-hacks
 To set up all you have to do is copy and paste the javascript into your console on your browser 
 
-**Edge**
+<ins>**Edge** </ins><br />
 To set it up on Microsoft Edge you first have to open achieve and load it into the asses (question page) <br />
 Then press <br />
 CTRL+SHIFT+I<br />
