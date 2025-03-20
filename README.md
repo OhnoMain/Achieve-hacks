@@ -2,7 +2,7 @@
 To set up all you have to do is copy and paste the javascript into your console on your browser 
 
 **Edge**
-To set it up on Microsoft Edge you first have to open achieve and load it into the asses (question page)
+To set it up on Microsoft Edge you first have to open achieve and load it into the asses (question page) <br />
 Then press 
 CTRL+SHIFT+I
 Then click on Console at the top 
