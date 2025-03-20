@@ -23,6 +23,10 @@ b(￣▽￣)d<br />
 <br />
 ![image](https://github.com/user-attachments/assets/8bd94e8e-bd67-47ff-ac4a-b83fabb1c3fd)<br />
 <br />
+Currently there is only 1 Error which is when the page moves onto the next question the gui dissappers 
+(due to the realoading of the page) I am currently working on that fix, I am thinking of making it into 
+an extension
+Any tips would be appreciated 
 <br />
 <ins>**Please dont be a skid 🚫🚫 **<br />
 **You are allowed to use this but dont claim it as your own** <br />
