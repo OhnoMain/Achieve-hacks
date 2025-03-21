@@ -1,0 +1,210 @@
+// Create the rectangular GUI container
+const guiContainer = document.createElement('div');
+guiContainer.style.cssText = `
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: #2b1d3e;
+    border: 3px solid #5c4a72;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    cursor: move;
+    display: flex;
+    flex-direction: column;
+    color: #d1c4e9;
+    font-family: Arial, sans-serif;
+`;
+
+// Create the close button
+const closeButton = document.createElement('div');
+closeButton.textContent = 'X';
+closeButton.style.cssText = `
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #e53935;
+    color: #000000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+`;
+
+closeButton.addEventListener('click', () => {
+    guiContainer.remove();
+});
+
+// Create the title
+const title = document.createElement('h1');
+title.textContent = 'Achieve Answer Hack';
+title.style.cssText = `
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #7e57c2;
+`;
+
+// Create the subtitle
+const subtitle = document.createElement('h2');
+subtitle.textContent = 'Made By Ohno';
+subtitle.style.cssText = `
+    margin: 5px 0 20px;
+    padding: 0;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    color: #4527a0;
+`;
+
+// Create the output area
+const outputArea = document.createElement('div');
+outputArea.style.cssText = `
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #5c4a72;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #3e2c5b;
+    font-family: monospace;
+    font-size: 14px;
+    color: #ffffff;
+`;
+
+// Create the button
+const runButton = document.createElement('button');
+runButton.textContent = 'Get answer';
+runButton.style.cssText = `
+    padding: 10px 20px;
+    background-color: #7e57c2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+`;
+
+// Create the highlight answer
+const highlightAns = document.createElement('button');
+highlightAns.textContent = 'Highlight the answer';
+highlightAns.style.cssText = `
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #7e57c2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+`;
+
+// Create the auto answer
+const auto = document.createElement('button');
+auto.textContent = 'Auto-answer';
+auto.style.cssText = `
+    position: absolute;
+    top: 130px;
+    left: 120px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #7e57c2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+`;
+
+runButton.addEventListener('mouseover', () => {
+    runButton.style.backgroundColor = '#5e3ea8';
+});
+
+runButton.addEventListener('mouseout', () => {
+    runButton.style.backgroundColor = '#7e57c2';
+});
+
+// Add functionality to the button
+runButton.addEventListener('click', () => {
+    const element = document.querySelector('[data-correct]');
+    if (element) {
+        const dataCorrectValue = element.dataset.correct;
+        let answer = '';
+
+        // Map numbers to letters
+        switch (dataCorrectValue) {
+            case '1':
+                answer = 'A';
+                break;
+            case '2':
+                answer = 'B';
+                break;	
+            case '3':
+                answer = 'C';
+                break;
+            case '4':
+                answer = 'D';
+                break;
+            default:
+                answer = 'Unknown value';
+        }
+
+        outputArea.textContent = `The answer is ${answer}`;
+    } else {
+        outputArea.textContent = `No element with 'data-correct' found.`;
+    }
+});	
+
+// Append everything to the container
+guiContainer.appendChild(closeButton);
+guiContainer.appendChild(title);
+guiContainer.appendChild(subtitle);
+guiContainer.appendChild(outputArea);
+guiContainer.appendChild(runButton);
+guiContainer.appendChild(highlightAns);
+guiContainer.appendChild(auto);
+
+// Append the container to the body
+document.body.appendChild(guiContainer);
+
+// Make the GUI draggable
+let isDragging = false;
+let offsetX, offsetY;
+
+guiContainer.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    offsetX = event.clientX - guiContainer.offsetLeft;
+    offsetY = event.clientY - guiContainer.offsetTop;
+    guiContainer.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (isDragging) {
+        guiContainer.style.left = `${event.clientX - offsetX}px`;
+        guiContainer.style.top = `${event.clientY - offsetY}px`;
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    guiContainer.style.cursor = 'move';
+});
